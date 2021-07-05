@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/SEGLabModule9/static/css/main.5739ad41.chunk.css",
+    "main.js": "/SEGLabModule9/static/js/main.37c2f2dd.chunk.js",
+    "main.js.map": "/SEGLabModule9/static/js/main.37c2f2dd.chunk.js.map",
+    "runtime-main.js": "/SEGLabModule9/static/js/runtime-main.a0724c93.js",
+    "runtime-main.js.map": "/SEGLabModule9/static/js/runtime-main.a0724c93.js.map",
+    "static/js/2.dcfe5adb.chunk.js": "/SEGLabModule9/static/js/2.dcfe5adb.chunk.js",
+    "static/js/2.dcfe5adb.chunk.js.map": "/SEGLabModule9/static/js/2.dcfe5adb.chunk.js.map",
+    "static/js/3.09f025f8.chunk.js": "/SEGLabModule9/static/js/3.09f025f8.chunk.js",
+    "static/js/3.09f025f8.chunk.js.map": "/SEGLabModule9/static/js/3.09f025f8.chunk.js.map",
+    "index.html": "/SEGLabModule9/index.html",
+    "static/css/main.5739ad41.chunk.css.map": "/SEGLabModule9/static/css/main.5739ad41.chunk.css.map",
+    "static/js/2.dcfe5adb.chunk.js.LICENSE.txt": "/SEGLabModule9/static/js/2.dcfe5adb.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/SEGLabModule9/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0724c93.js",
+    "static/js/2.dcfe5adb.chunk.js",
+    "static/css/main.5739ad41.chunk.css",
+    "static/js/main.37c2f2dd.chunk.js"
+  ]
+}
