@@ -101,7 +101,7 @@ const App: React.FC<AppProps> = () => {
         <Route path="/SEG3525LabModule9/help">
           <HelpComponent language={language} />
         </Route>
-        <Route path="/">
+        <Route path="/SEG3525LabModule9">
           <Container>
               <h1>
               {language === LANGUAGES.FRENCH ? errors.oopsFR : errors.oopsEN}
