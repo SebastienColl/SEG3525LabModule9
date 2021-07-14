@@ -138,3 +138,10 @@ export const PartnerSearchComponentStrings = {
     messageContentFR : "Contenu du message"
 
 }
+
+export const errors = {
+    redirectEN: "Back to home page",
+    redirectFR: "Retour à la page principale",
+    oopsEN: "Invalid link!",
+    oopsFR: "Lien invalide!",
+}

@@ -9,10 +9,10 @@ import PartnersComponent from './Partners';
 import HelpComponent from './Help';
 import AvailabilityComponent from './Availability';
 import { GiTennisRacket } from 'react-icons/gi'
-import { Container, Form, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { IoMdHelpCircle } from 'react-icons/io'
 import { AiFillHome } from 'react-icons/ai'
-import { LANGUAGES, NavBarComponentStrings } from './Strings';
+import { errors, LANGUAGES, NavBarComponentStrings } from './Strings';
 interface AppProps {
 }
 
@@ -70,7 +70,7 @@ const App: React.FC<AppProps> = () => {
                         <option>Français</option>
                         <option>English</option>
                     </Form.Control>
-                <Link to="/SEG3525LabModule9">
+                <Link to="/SEG3525LabModule9/home">
                     <AiFillHome className="mr-2 p-1 border rounded" size={36} color="#b30000" />
                 </Link>
                 <Link to="/SEG3525LabModule9/help">
@@ -100,6 +100,18 @@ const App: React.FC<AppProps> = () => {
         </Route>
         <Route path="/SEG3525LabModule9/help">
           <HelpComponent language={language} />
+        </Route>
+        <Route path="/">
+          <Container>
+              <h1>
+              {language === LANGUAGES.FRENCH ? errors.oopsFR : errors.oopsEN}
+              </h1>
+              <Link to="/SEG3525LabModule9/home">
+                <Button variant="danger">
+                  {language === LANGUAGES.FRENCH ? errors.redirectFR : errors.redirectEN}
+                </Button>
+              </Link>
+          </Container>
         </Route>
       </Switch>
     </>
