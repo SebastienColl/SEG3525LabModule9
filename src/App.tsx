@@ -23,7 +23,7 @@ const App: React.FC<AppProps> = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-            <Link color="green" to="/SEG3525LabModule9">
+            <Link to="/SEG3525LabModule9/home">
                 <Navbar.Brand >
                     <GiTennisRacket className="mr-2" size={36} color="#b30000"/>   
                     À vos raquettes!
