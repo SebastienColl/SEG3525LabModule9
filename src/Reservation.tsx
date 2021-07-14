@@ -115,7 +115,9 @@ const ReservationComponent: React.FC<ReservationComponentProps> = ({language}) =
                     {generalFormState.errors.course && generalFormState.errors.course.type === "required" && <p className="text-danger"><AiFillExclamationCircle className="mr-1" color="red"/>{generalFormState.errors.course.message}</p>}
                     <Form.Group>
                         <Form.Label>{language === LANGUAGES.FRENCH ? BookingComponentStrings.dateTimeFR : BookingComponentStrings.dateTimeEN}<sup className="text-danger">*</sup></Form.Label>
-                        <Datetime />
+                        <Datetime isValidDate={() => {
+                            return Math.random() < 0.5;
+                        }} />
                     </Form.Group>
                     <Form.Group className={generalFormState.errors.addressLine ? "mb-0" : ""}>
                         <Form.Label>{language === LANGUAGES.FRENCH ? BookingComponentStrings.addressLineEN : BookingComponentStrings.addressLineEN}<sup className="text-danger">*</sup> </Form.Label>
