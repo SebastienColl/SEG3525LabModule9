@@ -3,19 +3,21 @@ import { Col, Container, Row } from 'react-bootstrap';
 import "react-datetime/css/react-datetime.css";
 import HeaderComponent from './Header';
 import YouTube from 'react-youtube';
+import { LANGUAGES, TeacherComponentStrings } from './Strings';
 
 
 interface TeachersComponentProps {
+    language: string;
 
 }
 
-const TeachersComponent: React.FC<TeachersComponentProps> = () => {
+const TeachersComponent: React.FC<TeachersComponentProps> = ({language}) => {
     const opts = {
         width: '100%',
       };
     return (
         <Container>
-            <HeaderComponent title="Enseignants"/>
+            <HeaderComponent title={language === LANGUAGES.FRENCH ? TeacherComponentStrings.pageTitleFR : TeacherComponentStrings.pageTitleEN}/>
             <Col>
                 <Row>
                     <Col className="p-4">

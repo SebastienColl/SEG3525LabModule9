@@ -5,10 +5,11 @@ import HeaderComponent from './Header';
 import { AiFillPhone } from "react-icons/ai"
 
 interface HelpComponentProps {
+    language: string;
 
 }
 
-const HelpComponent: React.FC<HelpComponentProps> = () => {
+const HelpComponent: React.FC<HelpComponentProps> = ({language}) => {
 
     const [show, setShow] = useState<boolean>(false);
 

@@ -4,25 +4,29 @@ import "react-datetime/css/react-datetime.css";
 import HeaderComponent from './Header';
 import { partnersSearch } from "./mockdata"
 import {BsFillChatFill} from "react-icons/bs"
+import { LANGUAGES, PartnerSearchComponentStrings } from './Strings';
 
 interface PartnersComponentProps {
+    language: string;
 
 }
 
-const PartnersComponent: React.FC<PartnersComponentProps> = () => {
+const PartnersComponent: React.FC<PartnersComponentProps> = ({language}) => {
 
     const [show, setShow] = useState<boolean>(false);
 
     const toggleShow = () => setShow(!show);
     return (
         <Container>
-            <HeaderComponent title="Cours"/>
+            <HeaderComponent title={language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.pageTitleFR : PartnerSearchComponentStrings.pageTitleEN}/>
             <Table striped bordered hover>
                 <tbody>
                     {partnersSearch.map((partnerSearch: any) => {
+                        const sentence = language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.sentenceFR : PartnerSearchComponentStrings.sentenceEN
+                        const date = language === LANGUAGES.FRENCH ? partnerSearch.date.getDate() + " " + partnerSearch.date.toLocaleString('fr-ca', { month: 'long' }) + " " + partnerSearch.date.getFullYear() : " " + partnerSearch.date.toLocaleString('en-ca', { month: 'long' }) + " " + partnerSearch.date.getDate() + " " + partnerSearch.date.getFullYear()
                         return (
                             <tr className="h4">
-                                <td>{partnerSearch.firstName + " " + partnerSearch.lastName + " cherche un partenaire pour jouer le " + partnerSearch.date.getDate() + " " + partnerSearch.date.toLocaleString('fr-ca', { month: 'long' }) + " " + partnerSearch.date.getFullYear()}</td>
+                                <td>{partnerSearch.firstName + " " + partnerSearch.lastName + sentence + date}</td>
                                 <td><BsFillChatFill onClick={toggleShow} style={{cursor:"pointer"}}className="border rounded p-1" size={36}/></td>
                             </tr>
                         )
@@ -31,20 +35,20 @@ const PartnersComponent: React.FC<PartnersComponentProps> = () => {
                 </Table>
                 <Modal show={show}>
                     <Modal.Header>
-                    <Modal.Title>Recherche de partenaire</Modal.Title>
+                    <Modal.Title>{language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.pageTitleFR : PartnerSearchComponentStrings.pageTitleEN}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                     <Form.Group>
-                        <Form.Label>Contenu du message</Form.Label>
+                        <Form.Label>{language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.messageContentFR : PartnerSearchComponentStrings.messageContentEN}</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={toggleShow}>
-                        Annuler
+                    {language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.cancelFR : PartnerSearchComponentStrings.cancelEN}
                     </Button>
                     <Button variant="primary" onClick={toggleShow}>
-                        Envoyer le message
+                    {language === LANGUAGES.FRENCH ? PartnerSearchComponentStrings.sendMessageFR : PartnerSearchComponentStrings.sendMessageEN}
                     </Button>
                     </Modal.Footer>
                 </Modal>

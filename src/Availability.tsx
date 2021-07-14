@@ -5,12 +5,13 @@ import HeaderComponent from './Header';
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import { useState } from 'react';
+import { AvailabilitiesComponentStrings, LANGUAGES } from './Strings';
 
 interface AvailabilityComponentProps {
-
+    language: string;
 }
 
-const AvailabilityComponent: React.FC<AvailabilityComponentProps> = () => {
+const AvailabilityComponent: React.FC<AvailabilityComponentProps> = ({language}) => {
     const [colors, setColors] = useState([
         "#ff9999",
         "#00FF7F"
@@ -19,16 +20,16 @@ const AvailabilityComponent: React.FC<AvailabilityComponentProps> = () => {
     return (
         <Container>
             <HeaderComponent title="Disponibilité des terrains"/>
-            En date de:
+            {language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.atFR : AvailabilitiesComponentStrings.atEN}
             <Datetime onChange={() => setColors(["#ff9999", "#00FF7F"])} initialValue={date} timeFormat={false} className="w-25 mb-4" />
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Terrain 1</th>
-                        <th>Terrain 2</th>
-                        <th>Terrain 3</th>
-                        <th>Terrain 4</th>
+                        <th>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.fieldFR : AvailabilitiesComponentStrings.fieldEN} 1</th>
+                        <th>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.fieldFR : AvailabilitiesComponentStrings.fieldEN} 2</th>
+                        <th>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.fieldFR : AvailabilitiesComponentStrings.fieldEN} 3</th>
+                        <th>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.fieldFR : AvailabilitiesComponentStrings.fieldEN} 4</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -101,14 +102,14 @@ const AvailabilityComponent: React.FC<AvailabilityComponentProps> = () => {
                     <tbody>
                         <tr>
                             <td style={{backgroundColor:"#00FF7F"}}></td>
-                            <td>Disponible</td>
+                            <td>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.availableFR : AvailabilitiesComponentStrings.availableEN}</td>
                         </tr>
                         <tr>
                             <td></td>
                         </tr>
                         <tr>
                             <td style={{backgroundColor:"#ff9999"}}></td>
-                            <td>Réservé</td>
+                            <td>{language === LANGUAGES.FRENCH ? AvailabilitiesComponentStrings.reservedFR : AvailabilitiesComponentStrings.reservedEN}</td>
                         </tr>
                     </tbody>
                 </Table>

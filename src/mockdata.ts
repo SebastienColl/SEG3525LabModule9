@@ -1,36 +1,57 @@
 export const courses = [
     {
-        name: "Cours générale débutant",
+        name: {
+            FR:"Cours générale débutant",
+            EN: "General beginner course"
+        },
         duration: 30,
         price: 50
     },
     {
-        name: "Cours générale intermédiaire",
+        name: {
+            FR: "Cours générale intermédiaire",
+            EN: "General intermediate course"
+        },
         duration: 30,
         price: 50
     },
     {
-        name: "Cours générale avancé",
+        name: {
+            FR: "Cours générale avancé",
+            EN: "General advanced course"
+        },
         duration: 60,
         price: 120
     },
     {
-        name: "Cours générale expert",
+        name: {
+            FR: "Cours générale expert",
+            EN: "General expert course"
+        },
         duration: 60,
         price: 120
     },
     {
-        name: "Leçon de service",
+        name: {
+            FR: "Leçon de service",
+            EN: "Service lesson"
+        },
         duration: 30,
         price: 75
     },
     {
-        name: "Leçon de revers",
+        name: {
+            FR: "Leçon de revers",
+            EN: "Backgand shot lesson"
+        },
         duration: 30,
         price: 75
     },
     {
-        name: "Leçon de smash",
+        name: {
+            FR: "Leçon de coup frappé",
+            EN: "Smash lesson"
+        },
         duration: 30,
         price: 75
     },

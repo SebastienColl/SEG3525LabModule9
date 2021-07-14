@@ -5,28 +5,29 @@ import HeaderComponent from './Header';
 import { courses } from "./mockdata"
 import { Link } from 'react-router-dom';
 import { BiNote } from "react-icons/bi"
+import { CoursesComponentStrings, LANGUAGES } from './Strings';
 interface CoursesComponentProps {
-
+    language: string;
 }
 
-const CoursesComponent: React.FC<CoursesComponentProps> = () => {
+const CoursesComponent: React.FC<CoursesComponentProps> = ({language}) => {
     return (
         <Container>
-            <HeaderComponent title="Cours"/>
+            <HeaderComponent title={language === LANGUAGES.FRENCH ? CoursesComponentStrings.pageTitleFR : CoursesComponentStrings.pageTitleEN}/>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Durée</th>
-                        <th>Coût</th>
-                        <th>Réserver</th>
+                        <th>{language === LANGUAGES.FRENCH ? CoursesComponentStrings.nameFR : CoursesComponentStrings.nameEN}</th>
+                        <th>{language === LANGUAGES.FRENCH ? CoursesComponentStrings.durationFR : CoursesComponentStrings.durationEN}</th>
+                        <th>{language === LANGUAGES.FRENCH ? CoursesComponentStrings.costFR : CoursesComponentStrings.costEN}</th>
+                        <th>{language === LANGUAGES.FRENCH ? CoursesComponentStrings.reserveFR : CoursesComponentStrings.reserveEN}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {courses.map((course: any) => {
                         return (
                             <tr>
-                                <td>{course.name}</td>
+                                <td>{language === LANGUAGES.FRENCH ? course.name.FR : course.name.EN}</td>
                                 <td>{course.duration} minutes</td>
                                 <td>{course.price}$ </td>
                                 <td>
